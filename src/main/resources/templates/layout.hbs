@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>{{#block "title"}}Blog{{/block}}</title>
+   <title>{{#block "title"}}Departments{{/block}}</title>
    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
 </head>
 <body>
 <ul class="nav nav-tabs">
    <li role="presentation" class="active"><a href="/">Home</a></li>
-   <li role="presentation"><a href="/tasks/new">Add a New Task</a></li>
+   <li role="presentation"><a href="/tasks/new">Add a New Section</a></li>
 
    <li role="presentation" class="dropdown">
        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-           Category Menu <span class="caret"></span>
+           Department Menu <span class="caret"></span>
        </a>
        <ul class="dropdown-menu">
            {{#if categories}}
@@ -29,8 +29,8 @@
 <div class="container">
    <!--begin main template-->
    <div class="page-header">
-       <img src="/images/rawpixel-com-296621.jpg" width="70%" alt="https://unsplash.com/search/task?photo=Lh_bn9SgRSY">
-       <h1>Welcome to my To Do List. <small>Let's be organized, focused, and efficient.</small></h1>
+       <img src="/images/flower.jpg" width="70%" alt="Photo of a Flower Farmer">
+       <h1>Welcome to Safaricom. <small>The Home of Technology.</small></h1>
    </div>
 
    <div class="col-md-12">
@@ -45,8 +45,8 @@
        <div class="container">
            <hr>
            <p class="text-muted">
-              <a href="/categories/delete">delete all categories & tasks</a><br>
-              <a href="/tasks/delete">delete all tasks</a>
+              <a href="/categories/delete">delete all departments & Sections</a><br>
+              <a href="/tasks/delete">delete all sections</a>
            </p>
        </div>
    </footer>
