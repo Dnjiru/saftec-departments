@@ -44,4 +44,4 @@ Here is the link to GitHub Page where you can access the application online.
 
 ### License
 *This application use MIT License.*
-Copyright (c) {2019} **List of contributors; Mwaniki. Sam. Moringa School**
+Copyright (c) {2019} **List of contributors; David Mwaniki Njiru. Technical Mentor, Sam. Moringa School.**
