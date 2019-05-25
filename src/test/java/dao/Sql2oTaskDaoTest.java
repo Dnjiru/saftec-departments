@@ -17,15 +17,12 @@ public class Sql2oTaskDaoTest {
     conn = sql2o.open(); //keep connection open through entire test so it does not get erased
   }
 
-  
-
-  @Test
-  public void addingTaskSetsId() throws Exception {
-    Task task = setupNewTask();
-    int originalTaskId = task.getId();
-    taskDao.add(task);
-    assertNotEquals(originalTaskId, task.getId()); //how does this work?
+  @After
+  public void tearDown() throws Exception {
+    conn.close();
   }
+
+  
 
   @Test
   public void existingTasksCanBeFoundById() throws Exception {
