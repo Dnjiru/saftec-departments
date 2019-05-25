@@ -22,7 +22,13 @@ public class Sql2oTaskDaoTest {
     conn.close();
   }
 
-  
+  @Test
+  public void addingTaskSetsId() throws Exception {
+    Task task = setupNewTask();
+    int originalTaskId = task.getId();
+    taskDao.add(task);
+    assertNotEquals(originalTaskId, task.getId()); //how does this work?
+  }
 
   @Test
   public void existingTasksCanBeFoundById() throws Exception {
@@ -44,15 +50,7 @@ public class Sql2oTaskDaoTest {
     assertEquals(0, taskDao.getAll().size());
   }
 
-  @Test
-  public void updateChangesTaskContent() throws Exception {
-    String initialDescription = "mow the lawn";
-    Task task = new Task (initialDescription, 1);
-    taskDao.add(task);
-    taskDao.update(task.getId(),"brush the cat", 1);
-    Task updatedTask = taskDao.findById(task.getId()); //why do I need to refind this?
-    assertNotEquals(initialDescription, updatedTask.getDescription());
-  }
+  
 
   @Test
   public void deleteByIdDeletesCorrectTask() throws Exception {
