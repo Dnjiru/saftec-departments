@@ -12,7 +12,9 @@ public class CategoryTest {
   }
 
   @Test
-  "school", category.getName());
+  public void CategoryInstantiatesWithName_school() throws Exception {
+    Category category = setupNewCategory();
+    assertEquals("school", category.getName());
   }
 
   //helper methods

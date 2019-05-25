@@ -18,6 +18,17 @@ public class App {
         Sql2oTaskDao taskDao = new Sql2oTaskDao(sql2o);
         Sql2oCategoryDao categoryDao = new Sql2oCategoryDao(sql2o);
 
+        //configure for Deployment
+        ProcessBuilder process = new ProcessBuilder();
+        Integer port;
+        if (process.environment().get("PORT") != null) {
+            port = Integer.parseInt(process.environment().get("PORT"));
+        } else {
+            port = 4567;
+        }
+
+        setPort(port);
+
         //get: show all tasks in all categories and show all categories
         get("/", (req, res) -> {
           Map<String, Object> model = new HashMap<>();
