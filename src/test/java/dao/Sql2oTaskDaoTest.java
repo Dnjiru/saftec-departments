@@ -69,15 +69,19 @@ public class Sql2oTaskDaoTest {
   }
 
   @Test
-  
+  public void clearAllClearsAll() throws Exception {
+    Task task = setupNewTask();
+    Task otherTask = new Task("brush the cat", 2);
+    taskDao.add(task);
+    taskDao.add(otherTask);
+    int daoSize = taskDao.getAll().size();
+    taskDao.clearAllTasks();
     assertTrue(daoSize > 0 && daoSize > taskDao.getAll().size()); //this is a little overcomplicated, but illustrates well how we might use `assertTrue` in a different way.
   }
 
   @Test
   public void categoryIdIsReturnedCorrectly() throws Exception {
-    Task task = setupNewTask();
-    int originalCatId = task.getCategoryId();
-    taskDao.add(task);
+ 
     assertEquals(originalCatId, taskDao.findById(task.getId()).getCategoryId());
   }
 
