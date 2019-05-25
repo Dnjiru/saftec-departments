@@ -24,10 +24,7 @@ public class Sql2oTaskDaoTest {
 
   @Test
   public void addingTaskSetsId() throws Exception {
-    Task task = setupNewTask();
-    int originalTaskId = task.getId();
-    taskDao.add(task);
-    assertNotEquals(originalTaskId, task.getId()); //how does this work?
+    
   }
 
   @Test
@@ -81,7 +78,9 @@ public class Sql2oTaskDaoTest {
 
   @Test
   public void categoryIdIsReturnedCorrectly() throws Exception {
- 
+    Task task = setupNewTask();
+    int originalCatId = task.getCategoryId();
+    taskDao.add(task);
     assertEquals(originalCatId, taskDao.findById(task.getId()).getCategoryId());
   }
 
