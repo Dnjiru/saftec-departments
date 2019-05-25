@@ -24,7 +24,10 @@ public class Sql2oTaskDaoTest {
 
   @Test
   public void addingTaskSetsId() throws Exception {
-    
+    Task task = setupNewTask();
+    int originalTaskId = task.getId();
+    taskDao.add(task);
+    assertNotEquals(originalTaskId, task.getId()); //how does this work?
   }
 
   @Test
