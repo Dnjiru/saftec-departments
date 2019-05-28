@@ -27,7 +27,7 @@ public class App {
             port = 4567;
         }
 
-        setPort(port);
+        port (port);
 
         //get: show all tasks in all categories and show all categories
         get("/", (req, res) -> {
