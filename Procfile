@@ -1,1 +1,1 @@
-web: ./build/install/to-do/bin/saftec-departments
+web: ./build/install/saftec-departments/bin/saftec-departments
